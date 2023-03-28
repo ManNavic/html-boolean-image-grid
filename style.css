@@ -1,10 +1,12 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 .container{
     display: grid;
-    grid-template-rows: 60px 800px 1fr 60px;
+    grid-template-rows: 60px 500px 1fr 60px;
     grid-template-columns: 1fr;
     grid-template-areas: 
     "header"
@@ -17,6 +19,7 @@
     background-color: rgb(14, 14, 62);
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 .header > img{
     height: 100%;
@@ -24,24 +27,26 @@
 
 .hero {
     grid-area: hero;
-    
+}
+.hero > div > img{
+    object-fit: contain;
+    width: 100%;
+    max-height: 100%;
+    z-index: 0;
 }
 
-.hero > img {
-object-fit: fill;
-min-height: fit-content;
-}
-
-.hero > a > button  {
-    width: 300px;
-    height: 100px;
-    border-radius: 10px;
-    position: relative;
-    bottom: 1000px;
-    left: 500px;
-    font-size: 25px;
-    color: white;
-    background-color: rgba(128, 128, 128, 0.709) ;
+.hero > div > a > p  {
+    font-size: 36px;
+     font-weight: 200;
+     color: white;
+     position: absolute;
+     text-align: center;
+     top: 300px;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     border-radius: 10px;
+     padding: 30px;
+     background-color: rgba(0, 0, 0, 0.37);
 }
 
 
@@ -95,4 +100,8 @@ min-height: fit-content;
     bottom: 255px;
     left: 7px;
 
+}
+a{
+    text-decoration: none;
+    color: black;
 }
